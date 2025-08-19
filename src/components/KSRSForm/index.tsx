@@ -4,7 +4,7 @@ import { ServiceSummary, ProductivityData } from "@/types";
 import { convertToHHMM, convertToMinutesSeconds } from "@/utilities/timeConverter";
 
 type KSRSFormProps = {
-  onSubmit: (data: [number | null, number | null, number, number, boolean, ServiceSummary, ProductivityData, string, string]) => void;
+  onSubmit: (data: [number | null, number | null, number, number, boolean, boolean, boolean, ServiceSummary, ProductivityData, string, string]) => void;
   initialValues: {
     sales: number | null;
     salesTarget: number | null;
@@ -18,7 +18,8 @@ type KSRSFormProps = {
   }
 };
 
-const KSRSForm = ({ onSubmit, initialValues}: KSRSFormProps) => {
+
+const KSRSForm = ({ onSubmit, initialValues }: KSRSFormProps) => {
   const [sales, setSales] = useState<number | null>(null);
   const [salesTarget, setSalesTarget] = useState<number | null>(null)
   const [lateTarget, setLateTarget] = useState<number>(25);
@@ -30,7 +31,6 @@ const KSRSForm = ({ onSubmit, initialValues}: KSRSFormProps) => {
   const [prodData, setProdData] = useState<string>('');
   const [copiedServiceData, setCopiedServiceData] = useState<string>('');
   const [copiedProdData, setCopiedProdData] = useState<string>('');
-
 
 
   useEffect(() => {
@@ -364,7 +364,7 @@ const KSRSForm = ({ onSubmit, initialValues}: KSRSFormProps) => {
     event.preventDefault();
     const parsedServiceSummary = parseServiceSummaryData(serviceData);
     const parsedProductivityData = parseProductivityData(prodData)
-    onSubmit([sales, salesTarget, lateTarget, prepTarget, lift, parsedServiceSummary, parsedProductivityData, copiedServiceData, copiedProdData]);
+    onSubmit([sales, salesTarget, lateTarget, prepTarget, lift, kitLates, floorLates, parsedServiceSummary, parsedProductivityData, copiedServiceData, copiedProdData]);
   };
 
   const formFieldClass = `rounded-lg bg-grey-100 p-4 px-4 grow flex flex-col gap-2 gap-y-3 dark:bg-grey-700`

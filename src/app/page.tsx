@@ -23,11 +23,11 @@ const oswald = Oswald({
 });
 
 export default function Home() {
-  const [formData, setFormData] = useState<[number | null, number | null, number, number, boolean, ServiceSummary, ProductivityData, string, string] | null>(null);
+  const [formData, setFormData] = useState<[number | null, number | null, number, number, boolean, boolean, boolean, ServiceSummary, ProductivityData, string, string] | null>(null);
   const [activeTab, setActiveTab] = useState<string>('dataEntry')
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false)
 
-  const handleFormSubmit = (data: [number | null, number | null, number, number, boolean, ServiceSummary, ProductivityData, string, string]) => {
+  const handleFormSubmit = (data: [number | null, number | null, number, number, boolean, boolean, boolean, ServiceSummary, ProductivityData, string, string]) => {
     setFormData(data);
     setFormSubmitted(true);
     setActiveTab('result');
@@ -39,7 +39,9 @@ export default function Home() {
     lateTarget = 25,
     prepTarget = 8,
     foodLift = false,
-    serviceSummary = {} as ServiceSummary, 
+    kitLates = false,
+    floorLates = false,
+    serviceSummary = {} as ServiceSummary,
     productivityData = {} as ProductivityData,
     copiedServiceData = '',
     copiedProdData = '',
@@ -95,7 +97,7 @@ const buttonActiveClass = `
           </button>
         </div>
         {activeTab === "dataEntry" ? 
-          <KSRSForm onSubmit={handleFormSubmit} initialValues={{sales, salesTarget, lateTarget, prepTarget, foodLift, copiedServiceData, copiedProdData} } /> 
+          <KSRSForm onSubmit={handleFormSubmit} initialValues={{sales, salesTarget, lateTarget, prepTarget, foodLift, kitLates, floorLates, copiedServiceData, copiedProdData} } /> 
           :  
           <ProductivityResult 
             sales={sales} 
@@ -103,6 +105,8 @@ const buttonActiveClass = `
             lateTarget={lateTarget} 
             prepTarget={prepTarget} 
             foodLift={foodLift} 
+            kitLates={kitLates}
+            floorLates={floorLates}
             serviceSummary={serviceSummary} 
             productivity={productivityData} 
           />
