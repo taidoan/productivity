@@ -77,6 +77,7 @@ export const ServiceSummaryComponent = ({
           ? {
               label: 'Kitchen Lates',
               value: `${serviceSummary.chef1.ordersLate.count} (${serviceSummary.chef1.ordersLate.percentage}%)`,
+              className: serviceLatesClass,
             }
           : null,
       ]

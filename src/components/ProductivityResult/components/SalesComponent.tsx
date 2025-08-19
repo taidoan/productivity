@@ -7,16 +7,16 @@ export const SalesComponent = ({ sales, salesTarget }: SalesComponentProps) => {
   if (!sales || salesTarget === null) return null;
 
   const salesDifference = Math.abs(salesTarget - sales);
-  const percentageDifference = ((salesDifference / salesTarget) * 100).toFixed(2);
+  const percentageDifference = ((salesDifference / salesTarget) * 100).toFixed(1);
   const isBelowTarget = sales < salesTarget;
   const percentageClass = isBelowTarget ? 'text-red-500' : 'dark:text-lime-500 text-lime-700';
 
   return (
     <p>
-      We&apos;ve taken <span className='font-bold'>£{sales}</span> in food sales this week. This was
-      £{salesDifference}
+      We&apos;ve taken <strong>£{sales}</strong> in food sales this week. This was{' '}
+      <strong>£{salesDifference}</strong>{' '}
       <span className={`text-sm ${percentageClass}`}>
-        {isBelowTarget ? ` (-${percentageDifference}%)` : `(+${percentageDifference}%)`}
+        {isBelowTarget ? `(-${percentageDifference}%)` : `(+${percentageDifference}%)`}
       </span>
       {isBelowTarget ? ' below' : ' above'} the target of <strong>£{salesTarget}</strong>.
     </p>
