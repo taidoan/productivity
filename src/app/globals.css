@@ -5,14 +5,19 @@
 :root {
   --background: #e7e7e7;
   --foreground: #141414;
+  --image: url('./../images/peter-fitzpatrick-mtYsbwCCl4s-unsplash.jpg');
 }
 .dark {
   --background: #141414;
   --foreground: #ebebeb;
+  --image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1) 100%),
+    url('./../images/camille-cox--MMxYnt0rHo-unsplash.jpg');
 }
 
 body {
-  background: var(--background);
+  background: var(--image);
+  background-size: cover;
+  background-position: center;
   color: var(--foreground);
   font-family: var(--font-roboto);
 }

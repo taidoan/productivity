@@ -160,7 +160,7 @@ const KSRSForm = ({ onSubmit, initialValues = {} }: KSRSFormProps) => {
 
         <button
           type='submit'
-          className='font-bold rounded-lg px-5 py-3 text-grey-500 bg-grey-100 hover:bg-slate-600 ease-in-out duration-300 hover:text-white mx-auto block full-width col-span-4 my-2 dark:bg-grey-500 dark:text-grey-900 dark:hover:bg-primary-600 dark:hover:text-white'
+          className='text-stone-600 rounded-lg p-3 px-5 font-bold border ease-in-out duration-300  bg-white/40 border-white/50 shadow-md dark:border-white/20 dark:text-white mx-auto col-span-4 hover:bg-slate-600 hover:text-white hover:border-slate-400 dark:hover:bg-gradient-to-b dark:hover:border-primary-600 dark:hover:from-primary-700 dark:hover:to-primary-600'
         >
           Submit
         </button>

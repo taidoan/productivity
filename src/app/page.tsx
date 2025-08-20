@@ -49,19 +49,18 @@ export default function Home() {
   };
 
   // Button styling
-  const baseClass = `text-grey-500 rounded-lg p-3 px-5 font-bold border-2 ease-in-out duration-300`;
-  const disabledClass = `bg-grey-50 text-grey-200 border-grey-100 dark:border-grey-500 dark:bg-grey-500 dark:text-grey-700`;
-  const enabledClass = `bg-gradient-to-t from-grey-100 to-grey-200 border-grey-200 dark:bg-gradient-to-t dark:from-grey-500 dark:to-grey-700 dark:text-grey-100 dark:border-grey-500 dark:shadow-inner`;
-  const hoverClass = `hover:bg-gradient-to-b hover:from-slate-700 hover:to-slate-600 hover:text-white hover:border-slate-600 dark:hover:bg-gradient-to-b dark:hover:border-primary-600 dark:hover:from-primary-700 dark:hover:to-primary-600`;
+  const baseClass = `text-grey-600 rounded-lg p-3 px-5 font-bold border ease-in-out duration-300`;
+  const disabledClass = `bg-stone-400/20 border-white/0`;
+  const enabledClass = `bg-white/30 border-white/40 shadow-md dark:border-white/20 dark:text-white`;
+  const hoverClass = `hover:bg-gradient-to-b hover:from-slate-700 hover:to-slate-600 hover:text-white hover:border-white dark:hover:bg-gradient-to-b dark:hover:border-primary-600 dark:hover:from-primary-700 dark:hover:to-primary-600`;
 
   const buttonClass = (isDisabled: boolean) =>
     `${baseClass} ${isDisabled ? disabledClass : `${enabledClass} ${hoverClass}`}`;
 
   const buttonActiveClass = `
     ${baseClass}
-    !text-white 
-    !bg-gradient-to-t !from-primary-500 !to-primary-700 !border-primary-500 
-    dark:!from-primary-700 dark:!to-primary-900 dark:!border-primary-700
+    bg-gradient-to-t from-teal-400 to-teal-500 border-teal-500/10 text-teal-800 shadow
+    dark:from-teal-700 dark:to-teal-900 dark:border-teal-700 dark:text-white
   `;
 
   return (
@@ -70,7 +69,19 @@ export default function Home() {
     >
       <Header />
       <main
-        className={`rounded-2xl p-6 bg-gray-50 text-center shadow-lg dark:bg-grey-900 print:bg-white`}
+        className={`
+    rounded-3xl 
+    p-6
+    bg-white/30 
+    backdrop-blur-xl 
+    border border-white/40
+    shadow-2xl
+    text-center 
+    dark:bg-stone-900/50 
+    dark:border-stone-100/20 
+    print:bg-white
+    transition-all duration-300
+  `}
       >
         <div className='flex justify-center gap-x-4 mb-4 print:mb-0'>
           <button
