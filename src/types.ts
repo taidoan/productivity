@@ -83,13 +83,35 @@ export type ProductivityData = {
 };
 
 export type ProductivityResult = {
-  sales: number | null,
-  salesTarget: number | null,
-  lateTarget: number,
-  prepTarget: number,
-  foodLift: boolean,
-  kitLates: boolean,
-  floorLates: boolean,
-  serviceSummary: ServiceSummary,
-  productivity: ProductivityData | null
+  sales: number | null;
+  salesTarget: number | null;
+  lateTarget: number;
+  prepTarget: number;
+  foodLift: boolean;
+  kitLates: boolean;
+  floorLates: boolean;
+  serviceSummary: ServiceSummary;
+  productivity: ProductivityData | null;
+};
+
+export type FormData = {
+  sales: number | null;
+  salesTarget: number | null;
+  lateTarget: number;
+  prepTarget: number;
+  foodLift: boolean;
+  kitLates: boolean;
+  floorLates: boolean;
+  copiedServiceData: string;
+  copiedProdData: string;
+};
+
+interface ParsedData extends FormData {
+  parsedServiceSummary: ServiceSummary;
+  parsedProductivityData: ProductivityData;
 }
+
+export type KSRSFormProps = {
+  onSubmit: (data: ParsedData) => void;
+  initialValues: Partial<FormData>;
+};
