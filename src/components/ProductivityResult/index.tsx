@@ -13,6 +13,7 @@ const ProductivityResult = ({
   foodLift,
   kitLates,
   floorLates,
+  manualHolds,
   serviceSummary,
   productivity,
 }: ProductivityResult) => {
@@ -37,6 +38,7 @@ const ProductivityResult = ({
             prepTarget={prepTarget}
             foodLift={foodLift}
             lateTarget={lateTarget}
+            manualHolds={manualHolds}
           />
         )}
 

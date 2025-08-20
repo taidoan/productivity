@@ -30,6 +30,7 @@ interface FormData {
   foodLift: boolean;
   kitLates: boolean;
   floorLates: boolean;
+  manualHolds: boolean;
   copiedServiceData: string;
   copiedProdData: string;
   parsedServiceSummary: ServiceSummary;
@@ -119,6 +120,7 @@ export default function Home() {
                     foodLift: formData.foodLift,
                     kitLates: formData.kitLates,
                     floorLates: formData.floorLates,
+                    manualHolds: formData.manualHolds,
                     copiedServiceData: formData.copiedServiceData,
                     copiedProdData: formData.copiedProdData,
                   }
@@ -133,6 +135,7 @@ export default function Home() {
             prepTarget={formData?.prepTarget || 8}
             foodLift={formData?.foodLift || false}
             kitLates={formData?.kitLates || false}
+            manualHolds={formData?.manualHolds || false}
             floorLates={formData?.floorLates || false}
             serviceSummary={formData?.parsedServiceSummary || ({} as ServiceSummary)}
             productivity={formData?.parsedProductivityData || ({} as ProductivityData)}

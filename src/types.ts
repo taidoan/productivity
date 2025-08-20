@@ -90,6 +90,7 @@ export type ProductivityResult = {
   foodLift: boolean;
   kitLates: boolean;
   floorLates: boolean;
+  manualHolds: boolean;
   serviceSummary: ServiceSummary;
   productivity: ProductivityData | null;
 };
@@ -102,6 +103,7 @@ export type FormData = {
   foodLift: boolean;
   kitLates: boolean;
   floorLates: boolean;
+  manualHolds: boolean;
   copiedServiceData: string;
   copiedProdData: string;
 };

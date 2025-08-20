@@ -10,10 +10,13 @@ const preparation_target = 8;
 const food_lift = false;
 
 // Show kitchen lates (CHEF lates from KSRS)
-const show_kitchen_lates = false;
+const show_kitchen_lates = true;
 
 // Show floor lates (Total Lates - CHEF Lates from KSRS)
 const show_floor_lates = false;
+
+// Show manual holds
+const show_manual_holds = true;
 
 // Actual sales data. Default to null
 const sales = null;
@@ -42,13 +45,14 @@ export const PREP_TARGET_OPTIONS = [
 ];
 
 // DO NOT EDIT THIS
-export const DEFAULT_OPTIONS = {
+export const DEFAULT_FORM_OPTIONS = {
   sales: sales,
   salesTarget: sales_forecast,
   lateTarget: late_percentage_target,
   prepTarget: preparation_target,
   foodLift: food_lift,
   kitLates: show_kitchen_lates,
+  manualHolds: show_manual_holds,
   floorLates: show_floor_lates,
   copiedServiceData: '',
   copiedProdData: '',

@@ -13,7 +13,7 @@ import { fieldContainerClass } from './classes';
 
 const KSRSForm = ({ onSubmit, initialValues = {} }: KSRSFormProps) => {
   const [formData, setFormData] = useState<FormData>({
-    ...config.DEFAULT_OPTIONS,
+    ...config.DEFAULT_FORM_OPTIONS,
     ...initialValues,
   });
 
@@ -28,6 +28,7 @@ const KSRSForm = ({ onSubmit, initialValues = {} }: KSRSFormProps) => {
     { id: 'kitLates', label: 'Kitchen Lates', field: 'kitLates' },
     { id: 'floorLates', label: 'Floor Lates', field: 'floorLates' },
     { id: 'foodLift', label: 'Food Lift', field: 'foodLift' },
+    { id: 'holds', label: 'Manual Holds', field: 'manualHolds' },
   ] as const;
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -62,8 +63,8 @@ const KSRSForm = ({ onSubmit, initialValues = {} }: KSRSFormProps) => {
   return (
     <div className={``}>
       <p className='text-center mt-0 mb-4'>
-        Please set your targets, select optional information and enter data{' '}
-        <strong>copied directly</strong> KSRS into the boxes below.
+        Set your sales and performance targets, select any optional information to display, and
+        enter the data <strong>copied directly</strong> from KSRS into the fields below.
       </p>
       <form onSubmit={handleSubmit} className={`flex flex-wrap gap-4 md:grid grid-cols-4`}>
         <Input

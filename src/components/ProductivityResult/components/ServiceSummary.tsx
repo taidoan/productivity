@@ -14,6 +14,7 @@ type ServiceSummaryComponentProps = {
   prepTarget: number;
   foodLift: boolean;
   lateTarget: number;
+  manualHolds: boolean;
 };
 
 export const ServiceSummaryComponent = ({
@@ -23,6 +24,7 @@ export const ServiceSummaryComponent = ({
   prepTarget,
   foodLift,
   lateTarget,
+  manualHolds,
 }: ServiceSummaryComponentProps) => {
   const servicePrepTimeClass = getPrepTimeClass(
     serviceSummary?.averagePreparationTime.total,
@@ -60,7 +62,9 @@ export const ServiceSummaryComponent = ({
           className: serviceLatesClass,
         },
         { label: 'Items', value: serviceSummary.numberOfItems, className: '' },
-        { label: 'Manual Holds', value: serviceSummary.chef1.manualHolds, className: '' },
+        manualHolds
+          ? { label: 'Holds', value: serviceSummary.chef1.manualHolds, className: '' }
+          : null,
         floorLates
           ? {
               label: 'Floor Lates',
