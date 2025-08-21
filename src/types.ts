@@ -54,6 +54,7 @@ export type ServiceSummary = {
     ordersBumped: number;
     manualHolds: number;
   };
+
   dispense: {
     averagePrepTime: string;
     numberOfOrders: number;
@@ -79,4 +80,40 @@ export type StaffMember = {
 export type ProductivityData = {
   range?: string;
   staffMembers: StaffMember[];
+};
+
+export type ProductivityResult = {
+  sales: number | null;
+  salesTarget: number | null;
+  lateTarget: number;
+  prepTarget: number;
+  foodLift: boolean;
+  kitLates: boolean;
+  floorLates: boolean;
+  manualHolds: boolean;
+  serviceSummary: ServiceSummary;
+  productivity: ProductivityData | null;
+};
+
+export type FormData = {
+  sales: number | null;
+  salesTarget: number | null;
+  lateTarget: number;
+  prepTarget: number;
+  foodLift: boolean;
+  kitLates: boolean;
+  floorLates: boolean;
+  manualHolds: boolean;
+  copiedServiceData: string;
+  copiedProdData: string;
+};
+
+interface ParsedData extends FormData {
+  parsedServiceSummary: ServiceSummary;
+  parsedProductivityData: ProductivityData;
+}
+
+export type KSRSFormProps = {
+  onSubmit: (data: ParsedData) => void;
+  initialValues: Partial<FormData>;
 };

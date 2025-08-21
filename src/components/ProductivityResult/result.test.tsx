@@ -171,7 +171,7 @@ describe('ProductivityResult Component', () => {
     );
   
     const prepTimeCell = container.querySelector('td[data-cell="Prep Time: "]');
-    expect(prepTimeCell).toHaveClass('!bg-red-500');
+    expect(prepTimeCell).toHaveClass('bg-red-500!');
   
     rerender(
       <ProductivityResult
@@ -186,7 +186,7 @@ describe('ProductivityResult Component', () => {
     );
   
     const updatedPrepTimeCell = container.querySelector('td[data-cell="Prep Time: "]');
-    expect(updatedPrepTimeCell).toHaveClass('!bg-lime-500');
+    expect(updatedPrepTimeCell).toHaveClass('bg-lime-500!');
   });
   
   
