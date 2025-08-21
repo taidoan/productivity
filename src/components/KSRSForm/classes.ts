@@ -15,3 +15,20 @@ export const fieldContainerClass = `rounded-xl bg-white/25 border border-white/4
 
 // Field style
 export const fieldClass = `rounded-lg p-3 py-3 shadow  bg-white/60 dark:bg-grey-900 dark:shadow-none dark:text-grey-200 placeholder:text-grey-400 dark:placeholder:text-grey-400 focus:outline-2 focus:outline-primary-600 focus:ring-inset focus:outline-none focus:shadow-none focus:outline-offset-0 `;
+
+// Base button style
+export const baseButton = `text-grey-600 rounded-lg p-3 px-5 font-bold border ease-in-out duration-300 transition-all duration-300 shadow-md`;
+
+// Disabled button style
+export const disabledButton = `bg-stone-400/20 border-white/0 shadow-none`;
+
+// Enabled button style
+export const enabledButton = `bg-white/30 border-white/40 dark:border-white/20 dark:text-white`;
+
+// Hover button style
+export const hoverButton = `hover:-translate-y-1`;
+
+// Active button style
+export const activeButton = `
+${baseButton} bg-gradient-to-br from-gray-600/90 to-gray-500/70 border-gray-300 shadow-inner text-white dark:border-gray-200/30
+`;

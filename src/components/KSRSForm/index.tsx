@@ -1,6 +1,7 @@
 'use client';
 import type { FormData, KSRSFormProps } from '@/types';
 import * as config from '@/config';
+import * as style from './classes';
 import clsx from 'clsx';
 import { useState } from 'react';
 import { parseServiceSummaryData } from './functions/parseServiceSummary';
@@ -160,7 +161,13 @@ const KSRSForm = ({ onSubmit, initialValues = {} }: KSRSFormProps) => {
 
         <button
           type='submit'
-          className='text-stone-600 rounded-lg p-3 px-5 font-bold border ease-in-out duration-300  bg-white/40 border-white/50 shadow-md dark:border-white/20 dark:text-white mx-auto col-span-4 hover:bg-slate-600 hover:text-white hover:border-slate-400 dark:hover:bg-gradient-to-b dark:hover:border-primary-600 dark:hover:from-primary-700 dark:hover:to-primary-600'
+          className={clsx(
+            style.baseButton,
+            style.enabledButton,
+            style.hoverButton,
+            'mx-auto',
+            'col-span-4',
+          )}
         >
           Submit
         </button>

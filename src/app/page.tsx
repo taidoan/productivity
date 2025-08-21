@@ -1,4 +1,5 @@
 'use client';
+import * as style from './../components/KSRSForm/classes';
 import DarkModeToggle from '@/components/DarkModeToggle';
 import KSRSForm from '@/components/KSRSForm';
 import Footer from '@/layout/Footer';
@@ -48,20 +49,10 @@ export default function Home() {
     setActiveTab('result');
   };
 
-  // Button styling
-  const baseClass = `text-grey-600 rounded-lg p-3 px-5 font-bold border ease-in-out duration-300`;
-  const disabledClass = `bg-stone-400/20 border-white/0`;
-  const enabledClass = `bg-white/30 border-white/40 shadow-md dark:border-white/20 dark:text-white`;
-  const hoverClass = `hover:bg-gradient-to-b hover:from-slate-700 hover:to-slate-600 hover:text-white hover:border-white dark:hover:bg-gradient-to-b dark:hover:border-primary-600 dark:hover:from-primary-700 dark:hover:to-primary-600`;
-
   const buttonClass = (isDisabled: boolean) =>
-    `${baseClass} ${isDisabled ? disabledClass : `${enabledClass} ${hoverClass}`}`;
-
-  const buttonActiveClass = `
-    ${baseClass}
-    bg-gradient-to-t from-teal-400 to-teal-500 border-teal-500/10 text-teal-800 shadow
-    dark:from-teal-700 dark:to-teal-900 dark:border-teal-700 dark:text-white
-  `;
+    `${style.baseButton} ${
+      isDisabled ? style.disabledButton : `${style.enabledButton} ${style.hoverButton}`
+    }`;
 
   return (
     <div
@@ -85,7 +76,7 @@ export default function Home() {
       >
         <div className='flex justify-center gap-x-4 mb-4 print:mb-0'>
           <button
-            className={`${activeTab === 'dataEntry' ? buttonActiveClass : buttonClass(false)}`}
+            className={`${activeTab === 'dataEntry' ? style.activeButton : buttonClass(false)}`}
             onClick={() => setActiveTab('dataEntry')}
           >
             Data Entry
@@ -93,7 +84,7 @@ export default function Home() {
 
           <button
             className={`${
-              activeTab === 'result' ? buttonActiveClass : buttonClass(!formSubmitted)
+              activeTab === 'result' ? style.activeButton : buttonClass(!formSubmitted)
             }`}
             onClick={() => {
               if (formSubmitted) {
