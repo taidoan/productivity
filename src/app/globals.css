@@ -1,4 +1,6 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #e7e7e7;
@@ -25,12 +27,12 @@ h2,
 h3 {
   font-family: var(--font-oswald);
 }
-/* 
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-} */
+}
 
 @media print {
   :root {
