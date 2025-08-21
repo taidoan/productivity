@@ -9,7 +9,7 @@ type KeysProps = {
 
 export const KeysComponent = ({ prepTarget, lateTarget, foodLift }: KeysProps) => {
   const renderPerformanceKeys = (label: string, keys: JSX.Element[]) => (
-    <div className='rounded-2xl grow content-center xl:content-start lg:text-left bg-white/25 border border-white/20 shadow-md p-4 px-5 dark:bg-stone-600/30   dark:shadow-md print:shadow-none! print:bg-white! print:p-0! print:content-start'>
+    <div className='rounded-2xl grow content-center xl:content-start lg:text-left bg-white/25 border border-white/20 shadow-md p-4 px-5 dark:bg-stone-600/30   dark:shadow-md print:shadow-none! print:bg-white! print:p-0! print:content-start print:!mt-4'>
       <h2 className='uppercase text-2xl font-bold mb-1 xl:mb-2'>{label}</h2>
       <hr className='border-white/30 dark:border-white/15 hidden lg:block mb-2 xl:mb-3' />
       <ul>{keys}</ul>
@@ -64,7 +64,7 @@ export const KeysComponent = ({ prepTarget, lateTarget, foodLift }: KeysProps) =
 
   return (
     <>
-      <div className='lg:w-10/12 mx-auto my-8 mb-6 print:w-full print:text-left'>
+      <div className='lg:w-10/12 mx-auto my-8 mb-6 print:w-full print:text-left print:!mt-4'>
         <h2 className='uppercase text-4xl font-bold mb-1 print:hidden'>Understanding The Report</h2>
         <p>
           The floor team requires at least{' '}
