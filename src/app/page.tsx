@@ -56,7 +56,7 @@ export default function Home() {
 
   return (
     <div
-      className={`w-10/12 lg:w-11/12 xl:w-4/6 mx-auto print:w-full print:!bg-white print:mx-0 ${roboto.variable} ${oswald.variable}`}
+      className={`w-10/12 lg:w-11/12 xl:w-4/6 mx-auto print:w-full print:!bg-white print:!mx-0 print:!my-0 ${roboto.variable} ${oswald.variable}`}
     >
       <Header />
       <main
@@ -74,7 +74,7 @@ export default function Home() {
     transition-all duration-300
   `}
       >
-        <div className='flex justify-center gap-x-4 mb-4 print:mb-0'>
+        <div className='flex justify-center gap-x-4 mb-4 print:mb-0! print:mt-0!'>
           <button
             className={`${activeTab === 'dataEntry' ? style.activeButton : buttonClass(false)}`}
             onClick={() => setActiveTab('dataEntry')}

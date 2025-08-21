@@ -9,7 +9,9 @@ export const SalesComponent = ({ sales, salesTarget }: SalesComponentProps) => {
   const salesDifference = Math.abs(salesTarget - sales);
   const percentageDifference = ((salesDifference / salesTarget) * 100).toFixed(1);
   const isBelowTarget = sales < salesTarget;
-  const percentageClass = isBelowTarget ? 'text-red-500' : 'dark:text-lime-500 text-lime-700';
+  const percentageClass = isBelowTarget
+    ? 'text-red-500'
+    : 'dark:text-lime-600 text-lime-700 print:text-lime-700';
 
   return (
     <p>

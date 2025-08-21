@@ -1,4 +1,5 @@
 import * as classes from './../classes';
+import clsx from 'clsx';
 import {
   getPrepTimeClass,
   getWaitTimeClass,
@@ -38,7 +39,7 @@ export const ServiceSummaryComponent = ({
   );
 
   return (
-    <ul className={`text-center flex flex-wrap ${classes.border}`}>
+    <ul className={clsx(classes.serviceSummaryContainer)}>
       {[
         {
           label: 'Prep Time',
@@ -87,9 +88,11 @@ export const ServiceSummaryComponent = ({
       ]
         .filter(Boolean)
         .map((item, index) => (
-          <li key={index} className={`${classes.itemClass} `}>
-            <div className={classes.headerClasses}>{item?.label}</div>
-            <div className={`${classes.dataClass} ${item?.className}`}>{item?.value}</div>
+          <li key={index} className={clsx(classes.serviceSummaryItem)}>
+            <div className={clsx(classes.serviceSummaryItemLabel)}>{item?.label}</div>
+            <div className={clsx(classes.serviceSummaryItemValue, item?.className)}>
+              {item?.value}
+            </div>
           </li>
         ))}
     </ul>

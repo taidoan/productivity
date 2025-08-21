@@ -37,7 +37,7 @@ const ProductivityResult = ({
         {serviceSummary && (
           <div className='lg:w-10/12 mx-auto mb-6 print:mx-0 print:w-full print:text-left '>
             <h2 className='uppercase text-4xl font-bold mb-1'>
-              {serviceSummary.siteName} FDT Report
+              {serviceSummary.siteName} Food Delivery Times
             </h2>
             {productivity && <p>{productivity.range}</p>}
             <SalesComponent sales={sales} salesTarget={salesTarget} />

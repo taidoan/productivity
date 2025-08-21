@@ -9,9 +9,9 @@ type KeysProps = {
 
 export const KeysComponent = ({ prepTarget, lateTarget, foodLift }: KeysProps) => {
   const renderPerformanceKeys = (label: string, keys: JSX.Element[]) => (
-    <div className='rounded-xl grow content-center xl:content-start lg:text-left bg-grey-50 shadow-md p-4 px-5 dark:bg-grey-700 dark:shadow-md print:!shadow-none print:!bg-white print:!p-0 print:content-start'>
+    <div className='rounded-2xl grow content-center xl:content-start lg:text-left bg-white/25 border border-white/20 shadow-md p-4 px-5 dark:bg-stone-600/30   dark:shadow-md print:shadow-none! print:bg-white! print:p-0! print:content-start'>
       <h2 className='uppercase text-2xl font-bold mb-1 xl:mb-2'>{label}</h2>
-      <hr className='border-grey-300 dark:border-grey-500 hidden lg:block mb-2 xl:mb-3' />
+      <hr className='border-white/30 dark:border-white/15 hidden lg:block mb-2 xl:mb-3' />
       <ul>{keys}</ul>
     </div>
   );

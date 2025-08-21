@@ -126,7 +126,7 @@ const KSRSForm = ({ onSubmit, initialValues = {} }: KSRSFormProps) => {
               label={label}
               checked={formData[field]}
               onChange={(e) => updateField(field, e.target.checked)}
-              containerClassName={clsx(fieldContainerClass, '!flex-row gap-x-3 md:justify-center')}
+              containerClassName={clsx(fieldContainerClass, 'flex-row! gap-x-3 md:justify-center')}
             />
           ))}
         </div>
@@ -167,6 +167,7 @@ const KSRSForm = ({ onSubmit, initialValues = {} }: KSRSFormProps) => {
             style.hoverButton,
             'mx-auto',
             'col-span-4',
+            'hover:translate-none',
           )}
         >
           Submit

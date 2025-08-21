@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header className='py-12'>
+    <header className='py-12 header'>
       <div className='text-center'>
         <h2 className='text-6xl font-extrabold uppercase break-words'>FDT Report Generator</h2>
         <p className='text-lg w-9/12 mx-auto mt-2'>
