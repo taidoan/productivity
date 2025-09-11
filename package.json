@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev && test:watch",
     "build": "NODE_ENV=production next build",
+    "build:vps": "NEXT_PUBLIC_BASE_PATH= NEXT_PUBLIC_ASSET_PREFIX= next build && next export",
+    "build:gh": "NEXT_PUBLIC_BASE_PATH=/productivity NEXT_PUBLIC_ASSET_PREFIX=/productivity/ next build && next export",
     "test": "jest",
     "test:watch": "jest --watch",
     "start": "next start",
